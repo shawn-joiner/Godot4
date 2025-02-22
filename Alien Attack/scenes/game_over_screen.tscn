@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://btp8o31qkaq6l"]
+
+[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_yyxrh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5p4u"]
+bg_color = Color(0.7, 0, 0, 0.392157)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_jbsgs"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5sn7"]
+font_size = 48
+font_color = Color(0, 0.916667, 1, 1)
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yyxrh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -181.5
+offset_right = 345.0
+offset_bottom = 181.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d5p4u")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_top = 47.0
+offset_right = 184.0
+offset_bottom = 135.0
+grow_horizontal = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_jbsgs")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 142.5
+offset_right = 493.0
+offset_bottom = 209.5
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_c5sn7")
+
+[node name="RetryButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.022
+anchor_bottom = 0.022
+offset_left = 244.0
+offset_top = 219.514
+offset_right = 456.0
+offset_bottom = 288.514
+theme_override_font_sizes/font_size = 44
+text = "RETRY"
+
+[connection signal="pressed" from="Panel/RetryButton" to="." method="_on_retry_button_pressed"]

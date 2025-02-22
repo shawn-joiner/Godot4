@@ -1,0 +1,38 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpp3e0dl6tej6"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_6aou8"]
+[ext_resource type="PackedScene" uid="uid://dn36gwfbtg47" path="res://scenes/player.tscn" id="1_i0g1h"]
+[ext_resource type="PackedScene" uid="uid://ckeqa8o1n6g1l" path="res://scenes/bg.tscn" id="2_bn2lf"]
+[ext_resource type="PackedScene" uid="uid://cef1468a3mjg2" path="res://scenes/level_3.tscn" id="2_epnrl"]
+[ext_resource type="PackedScene" uid="uid://bi034gbc24cmt" path="res://scenes/start.tscn" id="3_a8p8h"]
+[ext_resource type="Texture2D" uid="uid://lkdbq8pcc5ee" path="res://assets/textures/bg/Purple.png" id="4_jrljv"]
+[ext_resource type="PackedScene" uid="uid://b7177y08q3v1u" path="res://scenes/exit.tscn" id="4_pnepi"]
+[ext_resource type="PackedScene" uid="uid://bk4ddmeesexw" path="res://scenes/ui.tscn" id="5_bjycq"]
+[ext_resource type="PackedScene" uid="uid://ckaako2cslhum" path="res://scenes/deathzone.tscn" id="6_svhqr"]
+[ext_resource type="PackedScene" uid="uid://cqtkpasatevs3" path="res://scenes/tile_map.tscn" id="7_1w1ss"]
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_6aou8")
+next_level = ExtResource("2_epnrl")
+
+[node name="BG" parent="." instance=ExtResource("2_bn2lf")]
+bg_texture = ExtResource("4_jrljv")
+
+[node name="UI" parent="." instance=ExtResource("5_bjycq")]
+
+[node name="Start" parent="." instance=ExtResource("3_a8p8h")]
+position = Vector2(37, 127)
+
+[node name="Exit" parent="." instance=ExtResource("4_pnepi")]
+position = Vector2(205, 127)
+
+[node name="Player" parent="." instance=ExtResource("1_i0g1h")]
+
+[node name="Deathzone" parent="." instance=ExtResource("6_svhqr")]
+
+[node name="TileMap" parent="." instance=ExtResource("7_1w1ss")]
+layer_0/tile_data = PackedInt32Array(655374, 524288, 2, 589838, 524288, 1, 524302, 524288, 0, 655373, 458752, 2, 589837, 458752, 1, 524301, 458752, 0, 655372, 458752, 2, 589836, 458752, 1, 524300, 458752, 0, 655371, 458752, 2, 589835, 458752, 1, 524299, 458752, 0, 655370, 458752, 2, 589834, 458752, 1, 524298, 458752, 0, 655369, 458752, 2, 589833, 458752, 1, 524297, 458752, 0, 655368, 458752, 2, 589832, 458752, 1, 524296, 458752, 0, 655367, 458752, 2, 589831, 458752, 1, 524295, 458752, 0, 655366, 458752, 2, 589830, 458752, 1, 524294, 458752, 0, 655365, 458752, 2, 589829, 458752, 1, 524293, 458752, 0, 655364, 458752, 2, 589828, 458752, 1, 524292, 458752, 0, 655363, 458752, 2, 589827, 458752, 1, 524291, 458752, 0, 655362, 458752, 2, 589826, 458752, 1, 524290, 458752, 0, 655361, 458752, 2, 589825, 458752, 1, 524289, 458752, 0, 655360, 393216, 2, 589824, 393216, 1, 524288, 393216, 0)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Traps" type="Node2D" parent="."]
