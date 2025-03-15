@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0oxtmrubcdui"]
+
+[ext_resource type="PackedScene" uid="uid://cik3sl5rvywcu" path="res://Assets/Models/Dungeon/gltf/floor_tile_small.gltf.glb" id="1_pnby6"]
+[ext_resource type="PackedScene" uid="uid://cpj8w0f2nmv51" path="res://Assets/Models/Dungeon/gltf/wall.gltf.glb" id="2_k617c"]
+[ext_resource type="PackedScene" uid="uid://dfc2p22elvf2i" path="res://Assets/Models/Dungeon/gltf/stairs_wood_decorated.gltf.glb" id="3_hdh42"]
+[ext_resource type="PackedScene" uid="uid://wxkjba6n35w2" path="res://Assets/Models/Dungeon/gltf/wall_corner.gltf.glb" id="4_wkdt2"]
+[ext_resource type="PackedScene" uid="uid://2pqm0oodmb50" path="res://Assets/Models/Dungeon/gltf/wall_Tsplit.gltf.glb" id="5_06613"]
+[ext_resource type="PackedScene" uid="uid://c283mcuieoi6n" path="res://Assets/Models/Dungeon/gltf/wall_open_scaffold.gltf.glb" id="6_hx7x8"]
+[ext_resource type="PackedScene" uid="uid://dg1r45egixmah" path="res://Assets/Models/Dungeon/gltf/wall_doorway_scaffold.glb" id="7_y30vc"]
+
+[node name="Tiles" type="Node3D"]
+
+[node name="floor_tile_small_gltf" parent="." instance=ExtResource("1_pnby6")]
+
+[node name="wall_gltf" parent="." instance=ExtResource("2_k617c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48101, 0, 0)
+
+[node name="stairs_wood_decorated_gltf" parent="." instance=ExtResource("3_hdh42")]
+transform = Transform3D(0.0977219, 0, -0.995214, 0, 1, 0, 0.995214, 0, 0.0977219, -2.05558, 0, 0)
+
+[node name="wall_corner_gltf" parent="." instance=ExtResource("4_wkdt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3069, 5.02045, 0)
+
+[node name="wall_Tsplit_gltf" parent="." instance=ExtResource("5_06613")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63951, 4.62915, 0)
+
+[node name="wall_open_scaffold_gltf" parent="." instance=ExtResource("6_hx7x8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7356, 0, 0)
+
+[node name="wall_doorway_scaffold2" parent="." instance=ExtResource("7_y30vc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1889, 0, 0)
